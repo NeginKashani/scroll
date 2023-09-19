@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(11, 11, 11);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            width: 550px;
+            height: 500px;
+            border: 2px solid rgb(27, 27, 27);
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px gray,
+                -4px -4px 10px gray;
+            display: flex;
+            overflow-x: hidden;
+
+
+        }
+
+        .section1,
+        .section2,
+        .section3,
+        .section4 {
+            min-width: 100%;
+            height: 100%;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            color: beige;
+            background-color: darkslategray;
+            /* border:1px solid black; */
+
+        }
+
+
+        .line {
+            position: fixed;
+            height: 15px;
+            width: 0;
+            top: 2px;
+            left: 2px;
+            background-color: rgb(255, 64, 16);
+            border: 1px solid rgb(44, 48, 43);
+            box-shadow: 3px 3px 10px white;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            color: Red;
+            margin-top: 70px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-shadow: 2px 2px black;
+
+        }
+
+        .section2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section3>p {
+            padding: 20px;
+
+        }
+
+        .section4>p {
+            padding: 20px;
+        }
+
+        #pic {
+            width: 350px;
+            height: 350px;
+            border-radius: 50px;
+        }
+
+        h1 {
+            margin-left: 10px;
+            text-shadow: 4px 4px black,
+            -4px -4px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="line"></div>
+        <div class="box">
+            <div class="section1">
+                <h1>1</h1>
+                <p>
+                    Canada is a country in North America. Its ten provinces and three territories extend from the
+                    Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, making it the world's
+                    second-largest country by total area, with the world's longest coastline. Its border with the United
+                    States is the world's longest international land border. The country is characterized by a wide
+                    range of both meteorologic and geological regions. It is a sparsely inhabited country of 40 million
+                    people, the vast majority residing south of the 55th parallel in urban areas. Canada's capital is
+                    Ottawa and its three largest metropolitan areas are Toronto, Montreal, and Vancouver.
+                </p>
+            </div>
+            <div class=" section2">
+                <img id="pic" src="imagecanada.jpg" alt="">
+            </div>
+            <div class="section3">
+                <h1>3</h1>
+                <p>Canada is a parliamentary democracy and a constitutional monarchy in the Westminster tradition. The
+                    country's head of government is the prime minister, who holds office by virtue of their ability to
+                    command the confidence of the elected House of Commons and is "called upon" by the governor general,
+                    representing the monarch of Canada, the head of state. The country is a Commonwealth realm and is
+                    officially bilingual (English and French) in the federal jurisdiction. It is very highly ranked in
+                    international measurements of government transparency, quality of life, economic competitiveness,
+                    innovation, education and gender equality. </p>
+            </div>
+            <div class=" section4">
+                <h1>4</h1>
+                <p>A developed country, Canada has one of the highest nominal per capita income globally and its
+                    advanced economy ranks among the largest in the world, relying chiefly upon its abundant natural
+                    resources and well-developed international trade networks. Canada is recognized as a middle power
+                    for its role in international affairs, with a tendency to pursue multilateral solutions. Canada's
+                    peacekeeping role during the 20th century has had a significant influence on its global image.
+                    Canada is part of multiple major international and intergovernmental institutions.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+<script>
+    let _box = document.querySelector('.box')
+    let _line = document.querySelector('.line')
+    _box.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        _box.scrollLeft += e.deltaY
+        _line.style.width = _box.scrollLeft / 1.2 + 'px'
+    })
+
+
+</script>
+
+</html>
